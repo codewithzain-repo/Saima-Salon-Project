@@ -32,3 +32,14 @@ Confirm business details and service menu, replace placeholder photos with appro
 - Checkout validates customer details and builds a structured booking payload.
 - Email/HubSpot submission is intentionally not active until `bookingEndpoint` in `config.js` is configured. For HubSpot, create a form and use its public Forms submission endpoint, or submit to your own serverless endpoint. Never place a private HubSpot token in frontend code.
 - Service names, prices, imagery, business address, and contact information must be verified by the salon owner before launch. The included catalog is illustrative.
+
+
+## New interactive service catalogue
+- Individual service details open at `service-detail.html?id=service-id`.
+- Related services are shuffled when a detail page is opened.
+- The booking drawer and search results support adding/removing services; the selected list is stored in the browser's localStorage.
+- The before/after comparison uses illustrative photos. Replace with salon-approved before/after images before publishing.
+- The homepage has ten testimonial placeholders. Replace each with the exact wording of a real, permission-approved customer review; do not present placeholders as real testimonials.
+- Social icons are included. Add the official profile URLs in `config.js` under `socials` to activate them.
+- Terms of Service and Refund Policy pages are general templates and should be reviewed by the salon owner before publishing.
+- Several newly added service prices are intentionally set to “Price on request”; verify every service and price with the salon.

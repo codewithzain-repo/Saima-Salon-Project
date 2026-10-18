@@ -29,3 +29,37 @@
  .mobile-header-actions .nav-search{padding:6px 7px}
  .menu-toggle{flex-basis:34px;width:34px;height:36px}
 }
+
+
+/* Page-aware navigation underline and gentle scroll reveals */
+.nav-links a{position:relative;transition:color .25s ease}
+.nav-links a::after{content:'';position:absolute;left:0;right:0;bottom:-7px;height:2px;background:var(--wine);transform:scaleX(0);transform-origin:left;transition:transform .28s ease}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+.nav-links a.active{color:var(--wine);font-weight:800}
+.scroll-reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease var(--reveal-delay,0ms),transform .7s cubic-bezier(.2,.65,.25,1) var(--reveal-delay,0ms)}
+.scroll-reveal.is-visible{opacity:1;transform:translateY(0)}
+.gallery-item[hidden]{display:none!important}
+.filter-btn{transition:background-color .25s ease,color .25s ease,border-color .25s ease,transform .25s ease}
+.filter-btn:active{transform:scale(.97)}
+@media(max-width:740px){.nav-links a::after{bottom:5px;right:auto;width:44px}.nav-links a.active{padding-left:10px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.scroll-reveal{opacity:1;transform:none;transition:none}.nav-links a::after,.filter-btn{transition:none}}
+
+
+/* Service detail pages, related suggestions, social links and engagement controls */
+.service-title-link{color:inherit;text-decoration:none;transition:color .2s ease}.service-title-link:hover{color:var(--wine)}
+.service-image-link{display:block;overflow:hidden}.service-image-link img{transition:transform .5s ease}.service-image-link:hover img{transform:scale(1.035)}
+.service-card-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:16px}.service-card-actions .button{margin-top:0}.service-detail-link{display:inline-block;margin-top:12px}
+.service-detail-page{padding-top:45px}.detail-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.9fr);gap:clamp(28px,5vw,70px);align-items:start}.detail-image img{width:100%;height:min(68vh,650px);object-fit:cover;display:block}.detail-copy h1{font-size:clamp(2.4rem,4.2vw,4.3rem);line-height:1.04;margin:12px 0 18px}.detail-tagline{font-size:1.1rem;color:var(--muted)}.detail-price{font-size:1.65rem;font-weight:800;color:var(--wine);margin:18px 0 5px}.detail-duration{color:var(--muted);margin:0 0 26px}.detail-copy h2{font-size:1.4rem;margin:26px 0 12px}.included-list{padding-left:20px;line-height:1.9}.detail-actions{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}.related-services{padding-top:75px}.related-services .section-heading{text-align:left;margin-bottom:28px}.related-services .service-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.scroll-progress{height:3px;position:fixed;z-index:2000;top:0;left:0;width:0;background:var(--wine);pointer-events:none}.back-to-top{position:fixed;right:20px;bottom:82px;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:var(--paper);color:var(--wine);font-size:1.35rem;box-shadow:0 8px 25px #0001;z-index:40;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s,transform .25s,visibility .25s;cursor:pointer}.back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0)}
+.before-after{position:relative;overflow:hidden;max-width:900px;margin:auto;aspect-ratio:16/9;background:#eee;--compare:50%}.before-after img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.before-after .after-image{clip-path:inset(0 0 0 var(--compare))}.before-after:after{content:'';position:absolute;top:0;bottom:0;left:var(--compare);width:2px;background:#fff;transform:translateX(-1px);pointer-events:none}.before-after input[type=range]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;z-index:3}.compare-label{position:absolute;top:14px;background:#292525c9;color:#fff;padding:7px 12px;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase}.before-label{left:14px}.after-label{right:14px}
+.testimonial-pending-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}.testimonial-pending{background:#fff;border:1px solid var(--line);padding:18px;min-height:160px}.testimonial-pending p{font-size:.9rem}.testimonial-pending small{color:var(--muted)}
+.social-links{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.social-links a{width:36px;height:36px;border:1px solid #ffffff44;border-radius:50%;display:grid;place-items:center;color:inherit;text-decoration:none;font-weight:800;transition:background .2s,color .2s}.social-links a:hover{background:#fff;color:var(--wine)}.social-links a[aria-disabled=true]{opacity:.7}.footer-grid{grid-template-columns:1.4fr 1fr 1.2fr 1fr}.footer-links a span{display:inline-block;min-width:20px}.search-result-actions{display:flex;gap:7px;align-items:center;justify-content:flex-end;flex-wrap:wrap}.search-detail-link{font-size:.8rem;color:var(--wine);text-decoration:underline}.search-add.remove-search{background:#fff;color:#9b2739;border-color:#9b2739}.search-add.remove-search:hover{background:#9b2739;color:#fff}
+@media(max-width:900px){.related-services .service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.testimonial-pending-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.detail-layout{grid-template-columns:1fr}.detail-image img{height:360px}.related-services .service-grid{grid-template-columns:1fr}.testimonial-pending-grid{grid-template-columns:1fr 1fr}.service-card-actions{align-items:stretch}.service-card-actions .button{width:100%}.before-after{aspect-ratio:4/5}.footer-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.service-image-link img,.back-to-top{transition:none}}
+
+/* Follow-up polish: clickable service cards and testimonial preview */
+.service-card-clickable{cursor:pointer}.service-card-clickable:focus-visible{outline:2px solid var(--wine);outline-offset:4px}.testimonial-stars{color:#b58a42;letter-spacing:.12em;font-size:.95rem;margin:6px 0 10px}.testimonial-pending{min-height:190px}
+
+/* Clear, consistent navbar search icon */
+.nav-search{display:inline-flex;align-items:center;justify-content:center;gap:7px}.search-icon{display:inline-block;width:19px;height:19px;flex:0 0 19px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}.mobile-header-actions .search-icon{width:20px;height:20px}
