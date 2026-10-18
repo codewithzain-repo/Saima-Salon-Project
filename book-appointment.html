@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Book Appointment | Saima’s Salon</title>
+    <meta name="description" content="Request an appointment through WhatsApp.">
+    <meta name="theme-color" content="#fff9f4">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="config.js"></script>
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <div class="announcement">A BEAUTY EXPERIENCE DESIGNED AROUND YOU</div>
+    <header class="site-header">
+        <div class="container navbar"><a class="brand" href="index.html"><strong data-name>Saima’s
+                    Salon</strong><span>Beauty · Care · Confidence</span></a>
+            <div class="mobile-header-actions"><button class="nav-search" type="button" data-search-open
+                    aria-label="Search services" title="Search services">⌕</button><button class="nav-cta booking-nav"
+                    type="button" data-booking-open>Booking <span class="booking-count"
+                        data-booking-count>0</span></button></div><button class="menu-toggle" aria-expanded="false"
+                aria-controls="nav">☰</button>
+            <ul class="nav-links" id="nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button class="nav-search" type="button" data-search-open aria-label="Search services">⌕
+                        <span>Search</span></button></li>
+                <li><button class="nav-cta booking-nav" type="button" data-booking-open>Booking <span
+                            class="booking-count" data-booking-count>0</span></button></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <div class="breadcrumb"><a href="index.html">Home</a> / Booking</div><span class="eyebrow">Your visit
+                    starts here</span>
+                <h1>Complete your booking request.</h1>
+                <p>Review your services and share your preferred date and time. No payment is taken online.</p>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container booking-layout">
+                <div class="booking-main">
+                    <div class="panel"><span class="eyebrow">STEP 1</span>
+                        <h2>Your services</h2>
+                        <div data-checkout-items class="checkout-items">
+                            <p class="muted">No services selected yet. <a href="services.html">Browse services</a> and
+                                add your favourites.</p>
+                        </div>
+                        <div class="checkout-total"><span>Estimated total</span><strong data-checkout-total>Rs.
+                                0</strong></div><a class="text-link" href="services.html">＋ Add more services</a>
+                    </div>
+                    <form class="form-card checkout-form" data-checkout-form novalidate action="https://api.web3forms.com/submit" method="POST">
+                         <input type="hidden" name="access_key" value="739350a4-b5c9-4357-b732-6e9494472dc3">
+                        <span class="eyebrow">STEP 2</span>
+                        <h2>Your details</h2>
+                        <div class="form-grid">
+                            <div class="field full"><label for="checkout-name">Full name *</label><input
+                                    id="checkout-name" name="name" autocomplete="name" required><small class="error"
+                                    data-error-for="name"></small></div>
+                            <div class="field full"><label for="checkout-phone">Phone number *</label><input
+                                    id="checkout-phone" name="phone" type="tel" autocomplete="tel"
+                                    placeholder="03XX XXXXXXX" required><small class="error"
+                                    data-error-for="phone"></small></div>
+                            <div class="field"><label for="checkout-date">Preferred date *</label><input
+                                    id="checkout-date" name="date" type="date" required><small class="error"
+                                    data-error-for="date"></small></div>
+                            <div class="field"><label for="checkout-time">Time slot *</label><select id="checkout-time"
+                                    name="time" required>
+                                    <option value="">Pick a time</option>
+                                    <option>10:00 AM</option>
+                                    <option>11:00 AM</option>
+                                    <option>12:00 PM</option>
+                                    <option>1:00 PM</option>
+                                    <option>2:00 PM</option>
+                                    <option>3:00 PM</option>
+                                    <option>4:00 PM</option>
+                                    <option>5:00 PM</option>
+                                    <option>6:00 PM</option>
+                                    <option>7:00 PM</option>
+                                    <option>Flexible</option>
+                                </select><small class="error" data-error-for="time"></small></div>
+                            <div class="field full"><label for="checkout-notes">Notes (optional)</label><textarea
+                                    id="checkout-notes" name="notes"
+                                    placeholder="Anything the salon should know?"></textarea></div>
+                        </div>
+                        <p class="note">This is a booking request, not a confirmed appointment. The salon must confirm
+                            availability with you.</p><button class="button" type="submit">Confirm Booking Request
+                            ↗</button>
+                        <p class="form-status" data-form-status aria-live="polite"></p>
+                    </form>
+                </div>
+                <aside class="booking-aside">
+                    <div class="panel">
+                        <h3>Booking summary</h3>
+                        <p class="muted">Your selected services and estimated total will appear here.</p>
+                        <div class="checkout-total"><span>Services</span><strong data-checkout-count>0</strong></div>
+                        <div class="checkout-total"><span>Total</span><strong data-checkout-total-side>Rs. 0</strong>
+                        </div>
+                        <p class="note">No payment now. We will contact you to confirm availability.</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><strong data-name>Saima’s Salon</strong>
+                    <p data-tagline>We’re here to serve you with the best.</p>
+                    <p>Beauty, personal care, and a welcoming salon experience in Bahria Town, Lahore.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Explore</h3>
+                    <div class="footer-links"><a href="about.html">About us</a><a href="services.html">Services</a><a
+                            href="gallery.html">Gallery</a><a href="faqs.html">FAQs</a><a
+                            href="privacy-policy.html">Privacy policy</a></div>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <div class="footer-links"><a data-phone href="tel:+923001555831">0300 1555831</a><a data-wa
+                            href="https://wa.me/923001555831" target="_blank" rel="noopener">WhatsApp us</a><a data-maps
+                            href="#" target="_blank" rel="noopener">Get directions</a></div>
+                    <p data-address></p>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© <span data-year></span> Saima’s Salon. All rights
+                    reserved.</span><span>Illustrative imagery used in this preview.</span></div>
+        </div>
+    </footer><a class="whatsapp-float" data-wa href="https://wa.me/923001555831" target="_blank" rel="noopener">WhatsApp
+        ↗</a>
+</body>
+
+</html>
